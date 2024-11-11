@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -73,6 +73,10 @@ class Reply(db.Model):
     
 with app.app_context():
     db.create_all()
+
+@app.route("/", methods=["GET"])
+def index():
+    return render_template("index.html")
 
 @app.route("/ping", methods=["GET"])
 def hello_world():
@@ -170,7 +174,7 @@ def process_post(post_id):
             setattr(post, value)
 
         db.session.commit()
-        
+
         return jsonify({"post": post.to_dict()}), 200
     if request.method == "DELETE":
         post = Post.query.get(post_id)

@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid red;
+}
+
+html, body {
+    width: 100%;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+.banner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding: 0.25rem;
+}
+
+.menu {
+    max-width: 32px;
+    width: 100%;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.menu-icon {
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 572px) {
+    html, body {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 992px) {
+    html, body {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    html, body {
+        font-size: 22px;
+    }
+}
